@@ -87,7 +87,7 @@ p {
   font-size: 14px;
 }
 
-.skills li:hover{
+.skills li:hover {
   background-color: #333;
   color: #ccc;
 }
@@ -104,12 +104,13 @@ p {
   object-fit: cover;
 }
 
-.email-link{
-  text-decoration: none; color: #000;
+.email-link {
+  text-decoration: none;
+  color: #777;
 }
 
-.email-link:hover{
-  color: #777;
+.email-link:hover {
+  color: #000;
 }
 
 .contact-info {
@@ -244,4 +245,11 @@ p {
   font-weight: bold;
   display: inline-block;
   width: 120px;
+}
+
+/* Media */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .education-table {
+    font-size: small;
+  }
 }
