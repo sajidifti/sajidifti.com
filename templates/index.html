@@ -1,0 +1,1102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- SITE TITLE -->
+  <title>Sajid Ifti || Personal Portfolio</title>
+  <!-- Latest Bootstrap min CSS -->
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+  <!-- Google Font -->
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,600,600i,700,700i" rel="stylesheet" />
+  <!--- owl carousel Css-->
+  <link rel="stylesheet" href="{% static 'owlcarousel/css/owl.carousel.css' %}" />
+  <link rel="stylesheet" href="{% static 'owlcarousel/css/owl.theme.css' %}" />
+  <!--Flex slider-->
+  <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" />
+  <!--Meanmenu-->
+  <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}" />
+  <!--magnific-popup Css-->
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+  <!--Slick Css-->
+  <link rel="stylesheet" href="{% static 'css/slick.css' %}" />
+  <!--slick theme Css-->
+  <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}" />
+  <!-- component CSS -->
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+</head>
+
+<body data-spy="scroll" data-offset="80">
+  <!-- START PRELOADER -->
+  <div class="preloader">
+    <div class="status">
+      <div class="status-mes"></div>
+    </div>
+  </div>
+  <!-- END PRELOADER -->
+
+  <!-- START NAVBAR -->
+  <div id="navigation" class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded site-navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img src="{% static 'img/logo.png' %}" alt="" /></a>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <nav>
+          <ul class="navbar-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#top_deals">Catagories</a></li>
+            <li><a href="#special_package">packages</a></li>
+            <li><a href="#gallery">Work Samples</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!--- END CONTAINER -->
+  </div>
+  <!-- END NAVBAR -->
+
+  <!-- START HOME -->
+  <section id="home" class="home-slider">
+    <div class="single_home_slide" style="
+          background-image: url('{% static 'img/slider/1.jpg' %}');
+          background-size: cover;
+          background-position: center center;
+        ">
+      <div class="slide_overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <div class="hero-text">
+                <h1>Welcome <span>To My Portfolio</span></h1>
+                <p>
+                  I am a full stack web developer working tirelessly to make
+                  my clients happy. <br />Want to learn more about me?
+                </p>
+                <a href="{% static 'SajidIfti.pdf' %}" class="btn btn-default btn-home-bg" target="_blank">Download
+                  CV</a>
+              </div>
+            </div>
+            <!--- END COL -->
+          </div>
+          <!--- END ROW -->
+        </div>
+        <!--- END CONTAINER -->
+      </div>
+      <!--- END slide -->
+    </div>
+    <!--- END slide -->
+
+    <div class="single_home_slide" style="
+          background-image: url('{% static 'img/slider/2.jpg' %}');
+          background-size: cover;
+          background-position: center center;
+        ">
+      <div class="slide_overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <div class="hero-text">
+                <h1>Hire <span>The Most Sophisticated Developer</span></h1>
+                <p>
+                  I develop beautiful and fully responsive mobile first sites
+                  <br />
+                </p>
+                <a href="#special_package" class="btn btn-default btn-home-bg">Hire Me</a>
+              </div>
+            </div>
+            <!--- END COL -->
+          </div>
+          <!--- END ROW -->
+        </div>
+        <!--- END CONTAINER -->
+      </div>
+      <!--- END slide -->
+    </div>
+    <!--- END slide -->
+
+    <div class="single_home_slide" style="
+          background-image: url('{% static 'img/slider/3.jpg' %}');
+          background-size: cover;
+          background-position: center center;
+        ">
+      <div class="slide_overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <div class="hero-text">
+                <h1>
+                  Develop <span>Beautiful And Responsive Websites</span>
+                </h1>
+                <p>
+                  I'm working in this sector for several months now. <br />My
+                  experiences will be assuring the quality of your site.
+                </p>
+                <a href="#special_package" class="btn btn-default btn-home-bg">Hire Me</a>
+              </div>
+            </div>
+            <!--- END COL -->
+          </div>
+          <!--- END ROW -->
+        </div>
+        <!--- END CONTAINER -->
+      </div>
+      <!--- END slide -->
+    </div>
+    <!--- END slide -->
+  </section>
+  <!-- END  HOME DESIGN -->
+
+  <!-- START SERVICES -->
+  <section id="service" class="our_services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="section-title">
+            <h2>Services</h2>
+            <span></span>
+            <p>
+              I provide different kinds of services. Anything related web
+              development, proabily you will get the right service from me.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-lg-4 col-sm-6 col-xs-12" data-aos="fade-up">
+          <div class="service">
+            <div class="icon"><i class="fas fa-code"></i></div>
+            <h4>HTML/CSS</h4>
+            <p>
+              I develop sites using HTML/CSS. Simple HTML5/CSS3 sites to
+              complex multipage sites, you name it, I'll develop it.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-lg-4 col-sm-6 col-xs-12" data-aos="fade-up">
+          <div class="service">
+            <div class="icon"><i class="fab fa-bootstrap"></i></div>
+            <h4>Bootstrap</h4>
+            <p>
+              I can use bootstrap 5 to develop fully responsive mobile first
+              sites. I make custom and template based bootstrap sites.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-lg-4 col-sm-6 col-xs-12" data-aos="fade-up">
+          <div class="service">
+            <div class="icon"><i class="fab fa-wordpress"></i></div>
+            <h4>Wordpress</h4>
+            <p>
+              I can develop custom wordpress sites(e.g., Blog, E-Commerce,
+              Landing Page). I can also customize wordpress sites as you wish.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-lg-4 col-sm-6 col-xs-12" data-aos="fade-up">
+          <div class="service">
+            <div class="icon"><i class="fas fa-sitemap"></i></div>
+            <h4>PSD/PNG?FIGMA to Web</h4>
+            <p>
+              I can develop sites from reference psd/png/figma/xd files. I use
+              HTML/CSS/JS/JQ/WP to develop referenced sites.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-lg-4 col-sm-6 col-xs-12" data-aos="fade-up">
+          <div class="service">
+            <div class="icon"><i class="fas fa-bug"></i></div>
+            <h4>Bug Fix</h4>
+            <p>
+              I fix common issues and bugs of websites. BTS/WP/HTML sites are
+              my work fields of bug fixing.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-lg-4 col-sm-6 col-xs-12" data-aos="fade-up">
+          <div class="service">
+            <div class="icon"><i class="fas fa-envelope-open-text"></i></div>
+            <h4>Email Template</h4>
+            <p>
+              I make beautiful email templates. I make HTML/General email
+              templates which are very attractive.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </div>
+    <!-- END CONTAINER -->
+  </section>
+  <!-- END SERVICES -->
+
+  <!-- START WHY CHOOSE US -->
+  <section class="why_choose section-padding gray-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up">
+          <div class="section-title text-center">
+            <h2>why choose me</h2>
+            <span></span>
+            <p>
+              I'm a student of CSE. I'm passionate about coding. I love to
+              create websites. I have plenty experience in creating sites.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+
+      <div class="row text-center">
+        <div class="col-md-5">
+          <div class="why-choose-img">
+            <figure class="big-img">
+              <img src="{% static 'img/why-choose-us/why-choose-us.jpg' %}" alt="Big image" />
+            </figure>
+
+            <figure class="thumb-1">
+              <img src="{% static 'img/why-choose-us/thumb.jpg' %}" alt="Thumb image" />
+            </figure>
+
+            <figure class="thumb-2">
+              <img src="{% static 'img/why-choose-us/thumb-2.jpg' %}" alt="Thumb image" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="col-md-7 mt-40">
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+              <div class="single-choose">
+                <i class="fas fa-code"></i>
+                <h4>Handcoded Sites</h4>
+                <p>
+                  All sites are creates by handcoding. I write every line of
+                  code with enthusiasm.
+                </p>
+              </div>
+            </div>
+            <!-- END COL -->
+
+            <div class="col-sm-6 col-xs-12">
+              <div class="single-choose">
+                <i class="fa fa-globe"></i>
+                <h4>World Class Service</h4>
+                <p>
+                  I provide best in class services. You will get world class
+                  service from me.
+                </p>
+              </div>
+            </div>
+            <!-- END COL -->
+
+            <div class="col-sm-6 col-xs-12">
+              <div class="single-choose">
+                <i class="fa fa-thumbs-up"></i>
+                <h4>Best Price Guarantee</h4>
+                <p>
+                  You cannot find anyone else offering cheaper cost/price than
+                  me in this class.
+                </p>
+              </div>
+            </div>
+            <!-- END COL -->
+
+            <div class="col-sm-6 col-xs-12">
+              <div class="single-choose">
+                <i class="fa fa-shield"></i>
+                <h4>Secure and Responsive Sites</h4>
+                <p>
+                  I make secure and responsive websites. I will install SSH
+                  certificate in your site.
+                </p>
+              </div>
+            </div>
+            <!-- END COL -->
+          </div>
+        </div>
+      </div>
+      <!-- END ROW -->
+    </div>
+    <!-- END CONTAINER -->
+  </section>
+  <!-- END WHY CHOOSE US -->
+
+  <!-- START COUNTER -->
+  <section class="complete-project-area counter_feature section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12 no-padding">
+          <div class="single-project-complete">
+            <h2 class="counter-num">10</h2>
+            <h3>Happy Clients</h3>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-md-3 col-sm-6 col-xs-12 no-padding">
+          <div class="single-project-complete">
+            <h2 class="counter-num">10</h2>
+            <h3>Amazing Websites</h3>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-md-3 col-sm-6 col-xs-12 no-padding">
+          <div class="single-project-complete">
+            <h2 class="counter-num">10000</h2>
+            <h3>Lines of Code</h3>
+          </div>
+        </div>
+        <!-- END COL -->
+        <div class="col-md-3 col-sm-6 col-xs-12 no-padding">
+          <div class="single-project-complete brnone">
+            <h2 class="counter-num">100</h2>
+            <h3>Cups of Coffee</h3>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </div>
+    <!-- END CONTAINER -->
+  </section>
+  <!-- END COUNTER -->
+
+  <!-- START TOP DEALS -->
+  <section id="top_deals" class="top_deals section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up">
+          <div class="section-title text-center">
+            <h2>Popular Catagories</h2>
+            <span></span>
+            <p>
+              I develop different kinds of websites. I can develop any type of
+              sites. Here are some popular catagories for you to explore.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+
+      <div class="row" data-aos="fade-up">
+        <div class="col-sm-4 col-xs-12">
+          <div class="single-deal">
+            <figure class="effect-sadie">
+              <img src="{% static 'img/portfolio/1.jpg' %}" alt="" />
+              <figcaption>
+                <h4>Blog</h4>
+                <p><a href="blog-details.html">Order Now</a></p>
+              </figcaption>
+            </figure>
+          </div>
+          <!--- END GRID -->
+        </div>
+        <!--- END COL -->
+
+        <div class="col-sm-4 col-xs-12">
+          <div class="single-deal">
+            <figure class="effect-sadie">
+              <img src="{% static 'img/portfolio/2.jpg' %}" alt="" />
+              <figcaption>
+                <h4>Portfolio</h4>
+                <p>
+                  <a href="{% static 'portfolio-details.html' %}">Order Now</a>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+          <!--- END GRID -->
+        </div>
+        <!--- END COL -->
+
+        <div class="col-sm-4 col-xs-12">
+          <div class="single-deal">
+            <figure class="effect-sadie">
+              <img src="{% static 'img/portfolio/3.jpg' %}" alt="" />
+              <figcaption>
+                <h4>E-Commerce</h4>
+                <p><a href="ecom-details.html">Order Now</a></p>
+              </figcaption>
+            </figure>
+          </div>
+          <!--- END GRID -->
+        </div>
+        <!--- END COL -->
+
+        <div class="col-sm-4 col-xs-12">
+          <div class="single-deal">
+            <figure class="effect-sadie">
+              <img src="{% static 'img/portfolio/4.jpg' %}" alt="" />
+              <figcaption>
+                <h4>Landing Page</h4>
+                <p><a href="land-details.html">Order Now</a></p>
+              </figcaption>
+            </figure>
+          </div>
+          <!--- END GRID -->
+        </div>
+        <!--- END COL -->
+
+        <div class="col-sm-4 col-xs-12">
+          <div class="single-deal">
+            <figure class="effect-sadie">
+              <img src="{% static 'img/portfolio/5.jpg' %}" alt="" />
+              <figcaption>
+                <h4>Newspaper</h4>
+                <p><a href="news-details.html">Order Now</a></p>
+              </figcaption>
+            </figure>
+          </div>
+          <!--- END GRID -->
+        </div>
+        <!--- END COL -->
+
+        <div class="col-sm-4 col-xs-12">
+          <div class="single-deal">
+            <figure class="effect-sadie">
+              <img src="{% static 'img/portfolio/6.jpg' %}" alt="" />
+              <figcaption>
+                <h4>Educational</h4>
+                <p><a href="edu-details.html">Order Now</a></p>
+              </figcaption>
+            </figure>
+          </div>
+          <!--- END GRID -->
+        </div>
+        <!--- END COL -->
+      </div>
+      <!--- END ROW -->
+    </div>
+    <!--- END CONTAINER-FLUID -->
+  </section>
+  <!-- END TOP DEALS -->
+
+  <!-- START SPECIAL PACKAGE -->
+  <section id="special_package" class="special_package section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title text-center">
+            <h2>Popular Packages</h2>
+            <span></span>
+            <p>
+              Prices vary from site to site. But here is some predefined
+              popular packages. <br />
+              Swipe Left To Reveal More Packages
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+      <div class="row text-left">
+        <div class="col-md-12" data-aos="fade-up">
+          <div id="package-slider" class="owl-carousel">
+            <div class="single_package">
+              <div class="pack_image">
+                <img class="img-fluid" src="{% static 'img/package/1.jpg' %}" alt="" />
+                <a href="tour-details.html" class="btn-bg">Order Now</a>
+              </div>
+              <span class="pack_price">$5-$300</span>
+              <div class="package-hover">
+                <h5>HTML 5 / CSS 3 Sites</h5>
+                <span class="time_zone">1 - 10 custom pages</span>
+                <p>
+                  Basic to high end sites using HTML/CSS. One page or multiple
+                  pages are available. Premium theme and templates are
+                  available.
+                </p>
+              </div>
+            </div>
+            <!-- END SINGLE PACKAGE -->
+
+            <div class="single_package">
+              <div class="pack_image">
+                <img class="img-fluid" src="{% static 'img/package/2.jpg' %}" alt="" />
+                <a href="tour-details.html" class="btn-bg">Order Now</a>
+              </div>
+              <span class="pack_price">$20-$400</span>
+              <div class="package-hover">
+                <h5>Bootstap Sites</h5>
+                <span class="time_zone">1 - 10 pages</span>
+                <p>
+                  Basic to high end sites using bootstrap 5. One page or
+                  multiple pages are available. Premium theme and templates
+                  are available.
+                </p>
+              </div>
+            </div>
+            <!-- END SINGLE PACKAGE -->
+
+            <div class="single_package">
+              <div class="pack_image">
+                <img class="img-fluid" src="{% static 'img/package/3.jpg' %}" alt="" />
+                <a href="tour-details.html" class="btn-bg">Order Now</a>
+              </div>
+              <span class="pack_price">$20-$500</span>
+              <div class="package-hover">
+                <h5>WordPress Sites</h5>
+                <span class="time_zone">1 - 10 Pages</span>
+                <p>
+                  Custom wordpress sites building. WOrdpress site
+                  customization. Premium theme, plugin available.
+                </p>
+              </div>
+            </div>
+            <!-- END SINGLE PACKAGE -->
+
+            <div class="single_package">
+              <div class="pack_image">
+                <img class="img-fluid" src="{% static 'img/package/4.jpg' %}" alt="" />
+                <a href="tour-details.html" class="btn-bg">Order Now</a>
+              </div>
+              <span class="pack_price">$5 - $100</span>
+              <div class="package-hover">
+                <h5>Bug Fixing</h5>
+                <span class="time_zone">1 - 3 Sites</span>
+                <p>
+                  Bug fixing of html/bootstrap/wordpress sites. Site will be
+                  inspected carefully for bugs and issues; bugs and issues
+                  will be fixed.
+                </p>
+              </div>
+            </div>
+            <!-- END SINGLE PACKAGE -->
+
+            <div class="single_package">
+              <div class="pack_image">
+                <img class="img-fluid" src="{% static 'img/package/5.jpg' %}" alt="" />
+                <a href="tour-details.html" class="btn-bg">Explore Now</a>
+              </div>
+              <span class="pack_price">$5 - $50</span>
+              <div class="package-hover">
+                <h5>E-Mail Template</h5>
+                <span class="time_zone">1 - 3 Templates</span>
+                <p>
+                  Custom email templates are available. Premium templates can
+                  be customized to your need.
+                </p>
+              </div>
+            </div>
+            <!-- END SINGLE PACKAGE -->
+
+            <div class="single_package">
+              <div class="pack_image">
+                <img class="img-fluid" src="{% static 'img/package/6.jpg' %}" alt="" />
+                <a href="tour-details.html" class="btn-bg">Explore Now</a>
+              </div>
+              <span class="pack_price">$20 - $100</span>
+              <div class="package-hover">
+                <h5>Server Setup</h5>
+                <span class="time_zone">1 Server 1 Domain</span>
+                <p>
+                  Your domain will be configured with your hosting server.
+                  CPanel will be installed. Wordpress will be installed as per
+                  request.
+                </p>
+              </div>
+            </div>
+            <!-- END SINGLE PACKAGE -->
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </div>
+    <!-- END CONTAINER -->
+  </section>
+  <!-- END SPECIAL PACKAGE -->
+
+  <!-- START GALLERY -->
+  <section id="gallery" class="our_gallery section-padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up">
+          <div class="section-title text-center">
+            <h2>Sample Works</h2>
+            <span></span>
+            <p>
+              I have developed many many sites. Here are some of my top works.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+      <div class="row">
+        <div class="col-md-12 padding_0">
+          <div id="gallery-slider" class="owl-carousel">
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/1.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/1.jpg' %}" title="Minimo"><i
+                  class="ti-plus"></i></a>
+              <h4>Minimo</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/2.jpg' %}" class="img-gallery' %}" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/2.jpg' %}" title="TinyOne"><i
+                  class="ti-plus"></i></a>
+              <h4>TinyOne</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/3.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/3.jpg' %}" title="Education"><i
+                  class="ti-plus"></i></a>
+              <h4>Education</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/4.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/4.jpg' %}" title="Ocean Edge"><i
+                  class="ti-plus"></i></a>
+              <h4>Ocean Edge</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/5.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/5.jpg' %}" title="Voyage"><i
+                  class="ti-plus"></i></a>
+              <h4>Voyage</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/6.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/6.jpg' %}" title="Arlo"><i
+                  class="ti-plus"></i></a>
+              <h4>Arlo</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/7.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/7.jpg' %}" title="Reese"><i
+                  class="ti-plus"></i></a>
+              <h4>Reese</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/8.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/8.jpg' %}" title="Woostify"><i
+                  class="ti-plus"></i></a>
+              <h4>Woostify</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+
+            <div class="single_gallery">
+              <img src="{% static 'img/gallery/9.jpg' %}" class="img-gallery" alt="" />
+              <a class="gallery_enlarge_icon" href="{% static 'img/gallery/9.jpg' %}" title="Anchor"><i
+                  class="ti-plus"></i></a>
+              <h4>Anchor</h4>
+            </div>
+            <!-- END SINGLE GALLERY -->
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </div>
+    <!-- END CONTAINER -->
+  </section>
+  <!-- END GALLERY -->
+
+  <!-- START BLOG -->
+  <section id="blog" class="blog_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up">
+          <div class="section-title text-center wow zoomIn">
+            <h2>My Blog</h2>
+            <span></span>
+            <p>
+              This my personal blog. I write about my projects and progresses
+              here. Clients also can interact and have a discussion on this
+              section.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="single_blog">
+            <div class="blog_image">
+              <img class="blog-photo" alt="Blog Photo" src="{% static 'img/blog/1.jpg' %}" />
+              <span class="post_date"><a href="#">27 Apr, 2021</a></span>
+            </div>
+            <div class="blog-text">
+              <h4><a href="#">Bootstrap 5 Overview</a></h4>
+              <p>
+                The bootstrap team has released the latest iteration of their
+                popular web development framework, bootstrap 5.0. Bootstrap 5
+                has many features. It is better in every way than its
+                predecessor.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--- END COL -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="single_blog">
+            <div class="blog_image">
+              <img class="blog-photo" alt="Blog Photo" src="{% static 'img/blog/2.jpg' %}" />
+              <span class="post_date"><a href="#">28 Apr, 2021</a></span>
+            </div>
+            <div class="blog-text">
+              <h4><a href="#">Why WordPress Is So Popular?</a></h4>
+              <p>
+                WordPress is a leading content management system. Perhaps, it
+                is the most popular. Wordpress was first developed for making
+                blog sites easier and beautiful. It has a good admin panel.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--- END COL -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="single_blog">
+            <div class="blog_image">
+              <img class="blog-photo" alt="Blog Photo" src="{% static 'img/blog/3.jpg' %}" />
+              <span class="post_date"><a href="#">29 Apr, 2021</a></span>
+            </div>
+            <div class="blog-text">
+              <h4>
+                <a href="#">Website Security Should be Your Number 1 Priority</a>
+              </h4>
+              <p>
+                These days, security of websites has become very important.
+                There are several things you can do to secure your website. I
+                am discussing a few here.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--- END COL -->
+      </div>
+      <!--- END ROW -->
+    </div>
+    <!--- END CONTAINER -->
+  </section>
+  <!-- END BLOG -->
+
+  <!-- START TESTIMONIAL -->
+  <section class="testimonial-demo section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center" data-aos="fade-up">
+          <div class="section-title">
+            <h2>What My well wishers say</h2>
+            <span></span>
+            <p>
+              I have done many projects over the years. Some of my clients and
+              well wishers have something to say.
+            </p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+
+      <div class="row">
+        <div class="col-md-9 d-block mx-auto text-left">
+          <div id="testimonial-slider">
+            <div class="testimonial">
+              <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                  <div class="testimonial-content">
+                    <h3 class="title">Minhaz Faisal</h3>
+                    <span class="post">Mentor at Shikhbe Shobai</span>
+                    <div class="description">
+                      I am his mentor at Shikhbe Shobai. I've been teaching
+                      him everything about web development.
+                    </div>
+                    <!-- <div class="test-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</li>
+											</ul>
+										</div> -->
+                  </div>
+                </div>
+
+                <div class="col-lg-4 hidden-md-down hidden-sm-down">
+                  <img src="{% static 'img/review/1.png' %}" alt="review image" />
+                </div>
+              </div>
+            </div>
+            <!-- END single Testimonials -->
+
+            <div class="testimonial">
+              <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                  <div class="testimonial-content">
+                    <h3 class="title">Minhaz Faisal</h3>
+                    <span class="post">Mentor at Shikhbe Shobai</span>
+                    <div class="description">
+                      I am his mentor at Shikhbe Shobai. I've been teaching
+                      him everything about web development.
+                    </div>
+                    <!-- <div class="test-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</li>
+											</ul>
+										</div> -->
+                  </div>
+                </div>
+
+                <div class="col-lg-4 hidden-md-down hidden-sm-down">
+                  <img src="{% static 'img/review/1.png' %}" alt="review image" />
+                </div>
+              </div>
+            </div>
+            <!-- END single Testimonials -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END TESTIMONIAL -->
+
+  <!-- START COMPANY PARTNER LOGO  -->
+  <div data-stellar-background-ratio="0.3" class="partner-logo" style="
+        background-image: url('{% static 'img/bg/partner-bg.jpg' %}');
+        background-size: cover;
+        background-position: center center;
+      ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up">
+          <div class="partner">
+            <a href="#"><img src="{% static 'img/partner/2.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/3.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/1.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/4.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/5.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/6.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/1.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/2.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/3.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/4.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/5.jpg' %}" alt="image" /></a>
+            <a href="#"><img src="{% static 'img/partner/6.jpg' %}" alt="image" /></a>
+          </div>
+        </div>
+        <!-- END COL  -->
+      </div>
+      <!--END  ROW  -->
+    </div>
+    <!-- END CONTAINER  -->
+  </div>
+  <!-- END COMPANY PARTNER LOGO -->
+
+  <!-- START CONTACT FORM-->
+  <section id="contact" class="contact_area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Contact Me</h2>
+            <span></span>
+            <p>If you have a project for me, feel free to contact me.</p>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+
+      <div class="row">
+        <div class="col-lg-9 col-sm-12 col-xs-12 d-block mx-auto">
+          <div class="contact_address text-center">
+            <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <a href="https://wa.me/+8801793041594" target="_blank">
+                  <div class="single-contact-info">
+                    <i class="fab fa-whatsapp"></i>
+                    <p>Message Me<br />+8801793041594</p>
+                  </div>
+                </a>
+              </div>
+              <!-- END COL -->
+
+              <div class="col-lg-4 col-md-4">
+                <a href="tel:+8801793041594">
+                  <div class="single-contact-info">
+                    <i class="fa fa-phone"></i>
+                    <p>
+                      Call Me<br />
+                      +8801793041594
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <!-- END COL -->
+
+              <div class="col-lg-4 col-md-4">
+                <a href="mailto:info.sajidifti@gmail.com">
+                  <div class="single-contact-info">
+                    <i class="fa fa-envelope"></i>
+                    <p>
+                      Email Me<br />
+                      info.sajidifti@gmail.com
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <!-- END COL -->
+            </div>
+          </div>
+        </div>
+        <!-- END COL -->
+
+        <div class="col-lg-8 col-sm-12 col-xs-12 d-block mx-auto" data-aos="fade-up">
+          <div class="contact">
+            <form id="contact-form" method="post" enctype="multipart/form-data">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <input type="text" name="name" class="form-control" id="first-name" placeholder="Name"
+                    required="required" />
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="email" name="email" class="form-control" id="first-email" placeholder="Email"
+                    required="required" />
+                </div>
+                <div class="form-group col-md-12">
+                  <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject"
+                    required="required" />
+                </div>
+                <div class="form-group col-md-12">
+                  <textarea rows="6" name="message" class="form-control" id="description" placeholder="Your Message"
+                    required="required"></textarea>
+                </div>
+                <div class="col-md-12">
+                  <div class="actions text-center">
+                    <input type="submit" value="Send message" name="submit" id="submitButton"
+                      class="btn btn-lg btn-contact-bg" title="Submit Your Message!" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- END COL -->
+      </div>
+      <!--- END ROW -->
+    </div>
+    <!--- END CONTAINER -->
+  </section>
+  <!-- END CONTACT FORM -->
+
+  <!-- START FOOTER -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="foot-logo">
+            <h4><a href="index.html">Sajid Ifti</a></h4>
+          </div>
+          <div class="footer-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="copyright">
+            <p>Copyright &copy; 2023 | All Rights Reserved.</p>
+          </div>
+          <!--- END FOOTER COPYRIGHT -->
+        </div>
+        <!--- END COL -->
+      </div>
+      <!--- END ROW -->
+    </div>
+    <!--- END CONTAINER -->
+  </div>
+  <!-- END FOOTER -->
+
+  <!-- Latest jQuery -->
+  <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+  <!-- Latest compiled and minified Bootstrap -->
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <!-- modernizer JS -->
+  <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+  <!-- jquery nav JS -->
+  <script src="{% static 'js/jquery.nav.js' %}"></script>
+  <!-- Meanmenu JS -->
+  <script src="{% static 'js/meanmenu.js' %}"></script>
+  <!-- jquery smooth-scroll JS -->
+  <script src="{% static 'js/smooth-scroll.js' %}"></script>
+  <!-- owl-carousel min js  -->
+  <script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
+  <!-- stellar js -->
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <!-- countTo js -->
+  <script src="{% static 'js/jquery.inview.min.js' %}"></script>
+  <!-- magnific-popup js -->
+  <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+  <!-- jquery flexslider min js -->
+  <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+  <!-- scrolltopcontrol js -->
+  <script src="{% static 'js/scrolltopcontrol.js' %}"></script>
+  <!-- slick js -->
+  <script src="{% static 'js/slick.js' %}"></script>
+  <!-- form-contact js -->
+  <script src="{% static 'js/form-contact.js' %}"></script>
+  <!-- aos js -->
+  <script src="{% static 'js/aos.js' %}"></script>
+  <!-- switcher js -->
+  <script src="{% static 'js/switcher.js' %}"></script>
+
+  <!-- scripts js -->
+  <script src="{% static 'js/scripts.js' %}"></script>
+
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/abffacff72.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

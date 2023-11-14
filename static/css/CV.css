@@ -1,0 +1,247 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #555;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.panel {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.job {
+  margin-bottom: 20px;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.job-description {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #777;
+}
+
+.skills {
+  margin-top: 10px;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #f5f5f5;
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: #555;
+  font-size: 14px;
+}
+
+.skills li:hover{
+  background-color: #333;
+  color: #ccc;
+}
+
+.photo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.email-link{
+  text-decoration: none; color: #000;
+}
+
+.email-link:hover{
+  color: #777;
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 5px;
+}
+
+.personal-info {
+  margin-bottom: 20px;
+}
+
+.personal-info p {
+  margin-bottom: 5px;
+  color: #777;
+}
+
+.social-links {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #333;
+}
+
+.education-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.education-table th,
+.education-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  color: #777;
+}
+
+.education-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  color: #777;
+}
+
+.education-table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.education-table tr:hover {
+  background-color: #eaeaea;
+}
+
+.interests-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.interests-icon {
+  display: inline-block;
+  width: 50px;
+}
+
+.interests-list li {
+  color: #777;
+}
+
+.interests-list i {
+  margin-right: 20px;
+}
+
+.references-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.references-list li {
+  margin-bottom: 15px;
+}
+
+.reference-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.reference-role {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.reference-contact {
+  margin-bottom: 0;
+  color: #777;
+}
+
+.personal-info p {
+  margin-bottom: 5px;
+}
+
+.personal-info a {
+  text-decoration: none;
+  color: #777;
+}
+
+.personal-info a:hover {
+  color: #333;
+}
+
+.info-label {
+  font-weight: bold;
+  display: inline-block;
+  width: 120px;
+}
