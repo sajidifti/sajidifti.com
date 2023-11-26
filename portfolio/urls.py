@@ -24,7 +24,7 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', home, name='home'),
     path('WLASL/', WLASL, name='WLASL'),
     path('CV/', CV, name='CV'),
     path('download/<str:filename>/', download_file, name='download_file'),
