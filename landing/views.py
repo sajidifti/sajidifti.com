@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from django.conf import settings
@@ -23,6 +24,16 @@ def CV(request):
 
 def WLASL(request):
     return render(request, 'WLSLT.html')
+
+
+def sign(request):
+    return redirect('https://github.com/sajidifti/Word_Level_Sign_Language_Translator_Django_OpenCV_Local')
+
+def silicon(request):
+    return redirect('https://github.com/sajidifti/Siliconbyte_Bangla_Tech_News_Site_PHP')
+
+def rent(request):
+    return redirect('https://github.com/sajidifti/RentMatch_To-Let_Platform')
 
 
 def download_file(request, filename):
