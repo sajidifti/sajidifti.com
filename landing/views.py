@@ -37,7 +37,7 @@ def rent(request):
     return redirect('https://github.com/sajidifti/RentMatch_To-Let_Platform')
 
 
-def Shortly(request):
+def Shorty(request):
     return HttpResponse("Work in progress..............")
 
 

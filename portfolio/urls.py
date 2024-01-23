@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from landing.views import home, download_file, WLASL, CV, sign, rent, silicon, Shortly
+from landing.views import home, download_file, WLASL, CV, sign, rent, silicon, Shorty
 from django.urls import path
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
@@ -30,7 +30,7 @@ urlpatterns = [
     path('s/', silicon, name='silicon'),
     path('w/', sign, name='sign'),
     path('r/', rent, name='rent'),
-    path('Shortly/', Shortly, name='Shortly'),
+    path('Shorty/', Shorty, name='Shorty'),
     path('download/<str:filename>/', download_file, name='download_file'),
     # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))
 ]
