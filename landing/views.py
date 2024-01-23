@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import FileResponse
@@ -34,6 +35,10 @@ def silicon(request):
 
 def rent(request):
     return redirect('https://github.com/sajidifti/RentMatch_To-Let_Platform')
+
+
+def Shortly(request):
+    return HttpResponse("Work in progress..............")
 
 
 def download_file(request, filename):
