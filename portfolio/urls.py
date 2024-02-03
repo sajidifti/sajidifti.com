@@ -14,23 +14,33 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, register_converter
+from .case_insensitive import CaseInsensitiveConverter
 from django.conf import settings
 from django.conf.urls.static import static
-from landing.views import home, download_file, WLASL, CV, sign, rent, silicon, Shorty
+from landing.views import home, download_file, WLASL, CV, sign, rent, silicon, Shorty, havenly, shorturl, daan
 from django.urls import path
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
+
+# Register the CaseInsensitiveConverter
+register_converter(CaseInsensitiveConverter, 'ci')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('WLASL/', WLASL, name='WLASL'),
     path('CV/', CV, name='CV'),
+    path('cv/', CV, name='CV'),
     path('s/', silicon, name='silicon'),
     path('w/', sign, name='sign'),
     path('r/', rent, name='rent'),
+    path('h/', havenly, name='havenly'),
+    path('st/', shorturl, name='shorturl'),
+    path('d/', daan, name='daan'),
     path('Shorty/', Shorty, name='Shorty'),
+    path('shorty/', Shorty, name='Shorty'),
     path('download/<str:filename>/', download_file, name='download_file'),
     # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))
 ]

@@ -36,6 +36,15 @@ def silicon(request):
 def rent(request):
     return redirect('https://github.com/sajidifti/RentMatch_To-Let_Platform')
 
+def havenly(request):
+    return redirect('https://github.com/sajidifti/Havenly_Django')
+
+def shorturl(request):
+    return redirect('https://github.com/sajidifti/Shorty-URL_Shortener')
+
+def daan(request):
+    return redirect('https://github.com/sajidifti/Daanbaksho_Django')
+
 
 def Shorty(request):
     return HttpResponse("Work in progress..............")
