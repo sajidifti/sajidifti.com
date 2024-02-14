@@ -15,7 +15,7 @@ from django.http.response import HttpResponse
 # Create your views here.
 
 
-def home(request):
+def landing(request):
     return render(request, 'index.html')
 
 
@@ -25,29 +25,6 @@ def CV(request):
 
 def WLASL(request):
     return render(request, 'WLSLT.html')
-
-
-def sign(request):
-    return redirect('https://github.com/sajidifti/Word_Level_Sign_Language_Translator_Django_OpenCV_Local')
-
-def silicon(request):
-    return redirect('https://github.com/sajidifti/Siliconbyte_Bangla_Tech_News_Site_PHP')
-
-def rent(request):
-    return redirect('https://github.com/sajidifti/RentMatch_To-Let_Platform')
-
-def havenly(request):
-    return redirect('https://github.com/sajidifti/Havenly_Django')
-
-def shorturl(request):
-    return redirect('https://github.com/sajidifti/Shorty-URL_Shortener')
-
-def daan(request):
-    return redirect('https://github.com/sajidifti/Daanbaksho_Django')
-
-
-def Shorty(request):
-    return HttpResponse("Work in progress..............")
 
 
 def download_file(request, filename):

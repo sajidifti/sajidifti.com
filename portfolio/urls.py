@@ -18,7 +18,7 @@ from django.urls import path, re_path, register_converter
 from .case_insensitive import CaseInsensitiveConverter
 from django.conf import settings
 from django.conf.urls.static import static
-from landing.views import home, download_file, WLASL, CV, sign, rent, silicon, Shorty, havenly, shorturl, daan
+from landing.views import landing, download_file, WLASL, CV
 from django.urls import path
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
@@ -30,7 +30,7 @@ register_converter(CaseInsensitiveConverter, 'ci')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='landing'),
+    path('', landing, name='landing'),
     path('WLASL/', WLASL, name='WLASL'),
     path('CV/', CV, name='CV'),
     path('cv/', CV, name='CV'),
@@ -45,5 +45,7 @@ urlpatterns = [
 #                           document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_URL)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_URL)
