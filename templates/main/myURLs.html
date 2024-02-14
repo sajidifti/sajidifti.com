@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="stylesheet" href="{% static "css/shorty-style.css" %}">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+        <!-- favicon -->
+        <link rel="icon" type="image/x-icon" href="{% static "images/fav.png" %}">
+        <title>My URLs - Shorty</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                <a href="{% url "home" %}">
+                    <div class="logo">
+                        <img src="{% static "images/logo.png" %}" alt="Shorty Logo" srcset="">
+                    </div>
+                </a>
+                <div class="navcontainer">
+                    <div class="spacer"></div>
+                    <div class="navpanel">
+                        <ul>
+                            <div class="curve-bg">
+                                <div class="dummy"></div>
+                            </div>
+                            <div class="curve-bg">
+                                <li class="top-active">
+                                    <a href="{% url "home" %}">New</a>
+                                </li>
+                            </div>
+                            <div class="curve-bg">
+                                <li class="active">
+                                    <a href="{% url "myurls" %}">My URLs</a>
+                                </li>
+                            </div>
+                            {% if user.groups.all.0.name == 'admin' %}
+                                <div class="curve-bg">
+                                    <li class="bottom-active">
+                                        <a href="{% url "allurls" %}">All URLs</a>
+                                    </li>
+                                </div>
+                                <div class="curve-bg">
+                                    <li class="">
+                                        <a href="{% url "customadmin" %}">Admin</a>
+                                    </li>
+                                </div>
+                                <div class="curve-bg">
+                                    <li class="">
+                                        <a href="{% url "allusers" %}">Users</a>
+                                    </li>
+                                </div>
+                            {% endif %}
+                            <div class="curve-bg">
+                                <div class="dummy {% if user.groups.all.0.name == 'generaluser' %}bottom-active{% endif %}"></div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="account">
+                    <ul>
+                        <li>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'profile' %}">
+                                    <div class="profile-container">
+                                        <div class="photo">
+                                            <img src="{{ user.image.url }}" alt="Profile Photo" class="profile-photo">
+                                        </div>
+                                        <div class="info">
+                                            <div class="username">{{ user.username }}</div>
+                                            <div class="email">
+                                                <i>{{ user.email }}</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="users-form-container">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="message-container">
+                                <p class="message">{{ message|safe|escape }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if urls %}
+                        <h2>My URLs</h2>
+                        <table>
+                            <tr>
+                                <th>Original</th>
+                                <th>Shortened</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            {% for url in urls %}
+                                <form action="" class="users-form" method="post">
+                                    {% csrf_token %}
+                                    <tr>
+                                        <td>{{ url.original_url }}</td>
+                                        <td>https://sajidifti.com/{{ url.custom_url }}</td>
+                                        <td>
+                                            <input type="hidden" name="url_id" value="{{ url.id }}">
+                                            <button type="submit" class="form-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                </form>
+                            {% endfor %}
+                        </table>
+                    {% else %}
+                        <h2>No URLs found.</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

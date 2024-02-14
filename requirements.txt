@@ -1,0 +1,4 @@
+django
+django-recaptcha
+pillow
+six
