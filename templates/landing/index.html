@@ -251,7 +251,9 @@
                     <div class="contact-right">
                         <form name="contact-form" id="contact-form" method="post">
                             {% csrf_token %}
-                            {{ form.as_p }}
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                             <button type="submit" class="btn btn2">Submit</button>
                         </form>
                         <span id="msg"></span>
