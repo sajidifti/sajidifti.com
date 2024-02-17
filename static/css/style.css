@@ -400,6 +400,10 @@ form .btn2 {
   cursor: pointer;
 }
 
+form textarea {
+    resize: none;
+}
+
 .copyright {
   width: 100%;
   text-align: center;
