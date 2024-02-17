@@ -36,7 +36,7 @@ def home(request):
         form_data = request.session.pop("shortner_form_data", {})
         form = URLShortenerForm(initial=form_data)
 
-    return render(request, "main/index.html", {"form": form})
+    return render(request, "main/index.html", {"form": form, "domain": get_current_site(request).domain, })
 
 
 def redirect_to_original(request, custom_url):

@@ -154,6 +154,9 @@ def customSignup(request):
                 request,
                 f"Account created successfully for {user.username}.\nWe sent a welcome email to {user.email}.\nYour request to sign up is under review.\nYou will be notified once your account is approved.\nThank you!",
             )
+
+            notificationEmail(request, "Welcome to Shorty!", "Welcome to Short. Your account was created succesfully. Your account is being reviewed. Once approved, you will get a verification email.", user.email)
+
             return redirect("login")
         else:
             for field, error_messages in form.errors.items():

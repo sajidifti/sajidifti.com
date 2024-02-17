@@ -4,19 +4,15 @@ from django.shortcuts import redirect
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from django.conf import settings
-import os
-# Import mimetypes module
-import mimetypes
-# import os module
-import os
-# Import HttpResponse module
 from django.http.response import HttpResponse
+import os
+import mimetypes
 
 # Create your views here.
 
 
 def landing(request):
-    return render(request, 'index.html')
+    return HttpResponse("New Porfolio is in Developent. Will be available very shortly.")
 
 
 def CV(request):
