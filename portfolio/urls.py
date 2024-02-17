@@ -18,7 +18,7 @@ from django.urls import path, re_path, register_converter
 from .case_insensitive import CaseInsensitiveConverter
 from django.conf import settings
 from django.conf.urls.static import static
-from landing.views import landing, download_file, WLASL, CV
+from landing.views import landing, download_file, WLASL, CV, allprojects
 from django.urls import path
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
@@ -29,12 +29,13 @@ register_converter(CaseInsensitiveConverter, 'ci')
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', landing, name='landing'),
-    path('WLASL/', WLASL, name='WLASL'),
-    path('CV/', CV, name='CV'),
-    path('cv/', CV, name='CV'),
-    path('download/<str:filename>/', download_file, name='download_file'),
+    path("admin/", admin.site.urls),
+    path("", landing, name="landing"),
+    path("allprojects/", allprojects, name="allprojects"),
+    path("WLASL/", WLASL, name="WLASL"),
+    path("CV/", CV, name="CV"),
+    path("cv/", CV, name="CV"),
+    path("download/<str:filename>/", download_file, name="download_file"),
     path("", include("users.urls")),
     path("", include("main.urls")),
     # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))

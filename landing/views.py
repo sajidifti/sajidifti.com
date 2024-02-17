@@ -7,40 +7,66 @@ from django.conf import settings
 from django.http.response import HttpResponse
 import os
 import mimetypes
+from django.contrib import messages
+from .models import Project
+from .forms import ContactForm
+
 
 # Create your views here.
 
 
 def landing(request):
-    return HttpResponse("New Porfolio is in Developent. Will be available very shortly.")
+    allerrors = ""
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Message Sent!")
+            return redirect("landing")
+        else:
+            for field, error_messages in form.errors.items():
+                for error_message in error_messages:
+                    allerrors = allerrors + " " + error_message
+            messages.error(request, allerrors)
+    else:
+        form = ContactForm()
+
+    projects = Project.objects.order_by("-priority")[:6]
+
+    return render(request, "landing/index.html", {"projects": projects, "form": form})
+
+
+def allprojects(request):
+    projects = Project.objects.order_by("-priority")
+    return render(request, "landing/allprojects.html", {"projects": projects})
 
 
 def CV(request):
-    return render(request, 'CV.html')
+    return render(request, "CV.html")
 
 
 def WLASL(request):
-    return render(request, 'WLSLT.html')
+    return render(request, "WLSLT.html")
 
 
 def download_file(request, filename):
-    context = {'filename': filename}
+    context = {"filename": filename}
 
-    if filename != '':
+    if filename != "":
         # Define Django project base directory
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         # Define the full file path
-        filepath = BASE_DIR + '/files/' + filename
+        filepath = BASE_DIR + "/files/" + filename
         # Open the file for reading content
-        path = open(filepath, 'rb')
+        path = open(filepath, "rb")
         # Set the mime type
         mime_type, _ = mimetypes.guess_type(filepath)
         # Set the return value of the HttpResponse
         response = HttpResponse(path, content_type=mime_type)
         # Set the HTTP header for sending to browser
-        response['Content-Disposition'] = "attachment; filename=%s" % filename
+        response["Content-Disposition"] = "attachment; filename=%s" % filename
         # Return the response value
         return response
     else:
         # Load the template
-        return render(request, 'download.html', context)
+        return render(request, "download.html", context)

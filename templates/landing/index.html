@@ -1,259 +1,276 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Sajid Anam Ifti</title>
-
-    <!-- link -->
-    <link rel="stylesheet" href="{% static "" %}">
-    <script src="https://kit.fontawesome.com/abffacff72.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <a href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
-                <ul id="sidemenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#Projects">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <i class="fas fa-solid fa-xmark menu-icon" onclick="closemenu()"></i>
-                </ul>
-                <i class="fas fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Django Developer</p>
-                <h1>Hi, I'm <span>Sajid Anam Ifti</span><br>from Bangladesh</h1>
-            </div>
-        </div>
-    </div>
-
-    <!-- about  -->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/v.png" alt="user">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p class="about-content">I am Md. Sajid Anam Ifti. I am a Django Developer. I have finished by BSc
-                        in Computer Science and
-                        Engineering from East West University. I am passionate about web development. Backend
-                        developement with Django framework is my favorite. I also have experience in Android
-                        development. I am a quick learner. I am able to work well in a team.</p>
-
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                        <p class="tab-links" onclick="opentab('publications')">Publications</p>
-                        <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Domain Expertise</span><br>Backend developement with Django and Android
-                                developement</li>
-                            <li><span>Programming Languages</span><br>Python, PHP, Java, C, C++, JavaScript</li>
-                            <li><span>Web Technologies</span><br>Django, Bootstrap, HTML, CSS</li>
-                            <li><span>Databases</span><br>MySQL, SQLite3, PostgreSQL, Firebase, MongoDB</li>
-                            <li><span>Machine Learning</span><br>PyTorch, Keras, TensorFlow, Pandas, NumPy, SciPy,
-                                Scikit-learn</li>
-                            <li><span>Server</span><br>NGINX, Gunicorn, PHP-FPM</li>
-                            <li><span>IDEs and Tools</span><br>VS Code, Android Studio, Git, Bash Scripting</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>01/2020 - 12/2023</span><br>BSc in Computer Science and Engineering from East West
-                                University<br>CGPA: <b>3.53</b>/4.00
-                            </li>
-                            <li><span>07/2017 - 05/2019</span><br>HSC from CPSC, BUSMS<br>GPA: <b>5.00</b>/5.00</li>
-                            <li><span>03/2017</span><br>SSC from BCMS<br>GPA: <b>5.00</b>/5.00</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="publications">
-                        <ul>
-                            <li><span>Innovative Method for Alzheimer’s Disease Detection Using Convolutional Neural
-                                    Networks.</span><br>Sajid Anam Ifti, M., Redwan Ahmed, M., Arafat Rahman, S.M.,
-                                Afridi, S.S., Jennifer, S.S., Reza, A.W. (2023). Innovative
-                                Method for Alzheimer’s Disease Detection Using Convolutional Neural Networks. In:
-                                Shakya, S., Tavares, J.M.R.S.,
-                                Fernández-Caballero, A., Papakostas, G. (eds) Fourth International Conference on Image
-                                Processing and Capsule Networks.
-                                ICIPCN 2023. Lecture Notes in Networks and Systems, vol 798. Springer,
-                                Singapore.https://doi.org/10.1007/978-981-99-7093-3_16</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="achievements">
-                        <ul>
-                            <li><span>Medha Lalon Scholarship</span><br>Awarded Medha Lalon Scholarship from Spring 2023
-                                - Fall 2023 at East West University for sustained CGPA of 3.50.</li>
-                        </ul>
-                    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Porfolio - Sajid Anam Ifti</title>
+        <!-- link -->
+        <link rel="shortcut icon"
+              href="{% static "favicon.ico" %}"
+              type="image/x-icon">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <script src="https://kit.fontawesome.com/abffacff72.js"
+                crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="message">
+                            <h3>{{ message|safe|escape }}</h3>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <nav>
+                    <a href="{% url "landing" %}">
+                        <img src="{% static "images/mainlogo.png" %}" class="logo" alt="logo">
+                    </a>
+                    <ul id="sidemenu">
+                        <li>
+                            <a href="{% url "landing" %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#about">About</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#services">Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#Projects">Projects</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#contact">Contact</a>
+                        </li>
+                        <i class="fas fa-solid fa-xmark menu-icon" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fas fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Django Developer</p>
+                    <h1>
+                        Hi, I'm <span>Sajid Anam Ifti</span>
+                        <br>
+                        from Bangladesh
+                    </h1>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- services -->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Web Development</h2>
-                    <p>Fullstack web developement using HTML, CSS, Bootstarp, JavaScript, and Python. I specialize in
-                        backend developement with Django. I have developed several web applications including a URL
-                        shortener named Shorty.</p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-android"></i>
-                    <h2>App Development</h2>
-                    <p>Android developement using Java and Kotlin. I have developed several apps including a calculator,
-                        event management app, address book, course management app, and more.</p>
-                    <a href="#">Learn more</a>
+        <!-- about  -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="{% static "images/v.png" %}" alt="user">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p class="about-content">
+                            I am Md. Sajid Anam Ifti. I am a Django Developer. I have finished by BSc
+                            in Computer Science and
+                            Engineering from East West University. I am passionate about web development. Backend
+                            developement with Django framework is my favorite. I also have experience in Android
+                            development. I am a quick learner. I am able to work well in a team.
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('publications')">Publications</p>
+                            <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li>
+                                    <span>Domain Expertise</span>
+                                    <br>
+                                    Backend developement with Django and Android
+                                    developement
+                                </li>
+                                <li>
+                                    <span>Programming Languages</span>
+                                    <br>
+                                    Python, PHP, Java, C, C++, JavaScript
+                                </li>
+                                <li>
+                                    <span>Web Technologies</span>
+                                    <br>
+                                    Django, Bootstrap, HTML, CSS
+                                </li>
+                                <li>
+                                    <span>Databases</span>
+                                    <br>
+                                    MySQL, SQLite3, PostgreSQL, Firebase, MongoDB
+                                </li>
+                                <li>
+                                    <span>Machine Learning</span>
+                                    <br>
+                                    PyTorch, Keras, TensorFlow, Pandas, NumPy, SciPy,
+                                    Scikit-learn
+                                </li>
+                                <li>
+                                    <span>Server</span>
+                                    <br>
+                                    NGINX, Gunicorn, PHP-FPM
+                                </li>
+                                <li>
+                                    <span>IDEs and Tools</span>
+                                    <br>
+                                    VS Code, Android Studio, Git, Bash Scripting
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li>
+                                    <span>01/2020 - 12/2023</span>
+                                    <br>
+                                    BSc in Computer Science and Engineering from East West
+                                    University
+                                    <br>
+                                    CGPA: <b>3.53</b>/4.00
+                                </li>
+                                <li>
+                                    <span>07/2017 - 05/2019</span>
+                                    <br>
+                                    HSC from CPSC, BUSMS
+                                    <br>
+                                    GPA: <b>5.00</b>/5.00
+                                </li>
+                                <li>
+                                    <span>03/2017</span>
+                                    <br>
+                                    SSC from BCMS
+                                    <br>
+                                    GPA: <b>5.00</b>/5.00
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="publications">
+                            <ul>
+                                <li>
+                                    <span>Innovative Method for Alzheimer’s Disease Detection Using Convolutional Neural
+                                    Networks.</span>
+                                    <br>
+                                    Sajid Anam Ifti, M., Redwan Ahmed, M., Arafat Rahman, S.M.,
+                                    Afridi, S.S., Jennifer, S.S., Reza, A.W. (2023). Innovative
+                                    Method for Alzheimer’s Disease Detection Using Convolutional Neural Networks. In:
+                                    Shakya, S., Tavares, J.M.R.S.,
+                                    Fernández-Caballero, A., Papakostas, G. (eds) Fourth International Conference on Image
+                                    Processing and Capsule Networks.
+                                    ICIPCN 2023. Lecture Notes in Networks and Systems, vol 798. Springer,
+                                    Singapore.https://doi.org/10.1007/978-981-99-7093-3_16
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="achievements">
+                            <ul>
+                                <li>
+                                    <span>Medha Lalon Scholarship</span>
+                                    <br>
+                                    Awarded Medha Lalon Scholarship from Spring 2023
+                                    - Fall 2023 at East West University for sustained CGPA of 3.50.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Projects -->
-    <div id="Projects">
-        <div class="container">
-            <h1 class="sub-title">My Projects</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="images/sign.png">
-                    <div class="layer">
-                        <h3>Word Level Deep Sign Language Translator</h3>
-                        <h4>Django, Pytorch, HTML, CSS, OpenCV</h4>
-                        <p>A capstone project that uses I3D-trained models to recognize American Sign Language
-                            efficiently and translate to English
-                            words. The project consists of a web application and an Android WebView app.</p>
-                        <a href="https://github.com/sajidifti/Word_Level_Sign_Language_Translator_Django_OpenCV_Local"
-                            target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+        <!-- services -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Web Development</h2>
+                        <p>
+                            Fullstack web developement using HTML, CSS, Bootstarp, JavaScript, and Python. I specialize in
+                            backend developement with Django. I have developed several web applications including a URL
+                            shortener named Shorty.
+                        </p>
+                        {% comment %} <a href="#">Learn more</a> {% endcomment %}
                     </div>
-                </div>
-                <div class="work">
-                    <img src="images/shorty.png">
-                    <div class="layer">
-                        <h3>Shorty - URL Shortener</h3>
-                        <h4>Django, HTML, CSS</h4>
-                        <p>A URL shortener built with Django for personal use. It was developed to take advantage of my
-                            domain and server. I incorporated custom user model, reCAPTCHA, and email verification.</p>
-                        <a href="https://github.com/sajidifti/Shorty-URL_Shortener" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/silicon.png">
-                    <div class="layer">
-                        <h3>Siliconbyte - Bangla Tech News Site</h3>
-                        <h4>PHP, Bootstrap, HTML, CSS</h4>
-                        <p>A Bangla tech news website created with vanilla PHP and MySQL as database. It incorporates an
-                            interaction-based content
-                            recommendation system. Users get content recommended based on article reading history.</p>
-                        <a href="https://github.com/sajidifti/Siliconbyte_Bangla_Tech_News_Site_PHP" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/havenly.png">
-                    <div class="layer">
-                        <h3>Havenly - Interior Designer Hiring Platform</h3>
-                        <h4>Django, Bootstrap, HTML, CSS</h4>
-                        <p>A platform where users can find registered interior designers. Designers can post their
-                            designs. Users can message
-                            designers. Designers can reply and discuss. Tawk.to chat API is used to provide live
-                            chat-based customer support.</p>
-                        <a href="https://github.com/sajidifti/Havenly_Django" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/rent.png">
-                    <div class="layer">
-                        <h3>Rentmatch - To-Let Platform</h3>
-                        <h4>Java, XML, Firebase, Mapbox</h4>
-                        <p>An Android app to post and find To-Lets. It uses Mapbox SDK to display apartment locations
-                            and directions.</p>
-                        <a href="https://github.com/sajidifti/RentMatch_To-Let_Platform" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square" target="_blank"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/calc.png">
-                    <div class="layer">
-                        <h3>Calculator for Android</h3>
-                        <h4>Java, XML, Rhino</h4>
-                        <p>A simple calculator app for Android. It uses Rhino. It has a user-friendly interface. It can
-                            store upto 10 calculation history.</p>
-                        <a href="https://github.com/sajidifti/Android_Calculator" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square" target="_blank"></i></a>
+                    <div>
+                        <i class="fa-brands fa-android"></i>
+                        <h2>App Development</h2>
+                        <p>
+                            Android developement using Java and Kotlin. I have developed several apps including a calculator,
+                            event management app, address book, course management app, and more.
+                        </p>
+                        {% comment %} <a href="#">Learn more</a> {% endcomment %}
                     </div>
                 </div>
             </div>
-            <a href="allprojects.html" class="btn">See more</a>
         </div>
-    </div>
-
-    <!-- contact -->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>info@sajidifti.com</p>
-                    <p><i class="fa-solid fa-phone"></i>+8801793041594</p>
-                    <div class="social-icons">
-                        <a href="https://github.com/sajidifti" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/sajidifti/" target="_blank"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://www.facebook.com/sajidifti/" target="_blank"><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com/sajidifti1" target="_blank"><i
-                                class="fa-brands fa-twitter"></i></a>
+        <!-- Projects -->
+        <div id="Projects">
+            <div class="container">
+                <h1 class="sub-title">My Projects</h1>
+                <div class="work-list">
+                    {% if projects %}
+                        {% for project in projects %}
+                            <div class="work">
+                                <img src="{{ project.image.url }}">
+                                <div class="layer">
+                                    <h3>{{ project.project_name }}</h3>
+                                    <h4>{{ project.tech_stack }}</h4>
+                                    <p>{{ project.description }}</p>
+                                    <a href="{{ project.github }}" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <h3>No projects Found!</h3>
+                    {% endif %}
+                </div>
+                <a href="{% url "allprojects" %}" class="btn">See more</a>
+            </div>
+        </div>
+        <!-- contact -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p>
+                            <i class="fa-solid fa-paper-plane"></i>info@sajidifti.com
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-phone"></i>+8801793041594
+                        </p>
+                        <div class="social-icons">
+                            <a href="https://github.com/sajidifti" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/sajidifti/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/sajidifti/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://twitter.com/sajidifti1" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                        <a href="{% static "files/Md_Sajid_Anam_Ifti.pdf" %}" class="btn btn2" download>Download CV</a>
                     </div>
-                    <a href="files/Md_Sajid_Anam_Ifti.pdf" class="btn btn2" download>Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="contact-form" id="contact-form" method="post">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
+                    <div class="contact-right">
+                        <form name="contact-form" id="contact-form" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="copyright">
-            <div class="links">
-                <a href="https://jellyfin.sajidifti.com" target="_blank">Jellyfin</a>
-                <a href="https://code.sajidifti.com" target="_blank">VS Code Server</a>
-                <a href="https://shorty.sajidifti.com" target="_blank">Shorty</a>
-                <a href="https://cloud.sajidifti.com" target="_blank">NextCloud</a>
-                <a href="https://Siliconbyte.sajidifti.com" target="_blank">SiliconByte</a>
+            <div class="copyright">
+                <div class="links">
+                    <a href="https://jellyfin.sajidifti.com" target="_blank">Jellyfin</a>
+                    <a href="https://code.sajidifti.com" target="_blank">VSCode</a>
+                    <a href="https://shorty.sajidifti.com" target="_blank">Shorty</a>
+                    <a href="https://cloud.sajidifti.com" target="_blank">NextCloud</a>
+                    <a href="https://Siliconbyte.sajidifti.com" target="_blank">SiliconByte</a>
+                </div>
+                <p>Copyright © Sajid Anam Ifti. All rights reserved</p>
             </div>
-            <p>Copyright © Sajid Anam Ifti. All rights reserved</p>
         </div>
-    </div>
-
-    <!-- Scroll to The Top -->
-    <div class="scroll-to-top" id="scrollButton" onclick="scrollToTop()">
-        ↑
-    </div>
-
-    <script src="script.js"></script>
-
-</body>
-
+        <!-- Scroll to The Top -->
+        <div class="scroll-to-top" id="scrollButton" onclick="scrollToTop()">↑</div>
+        <script src="{% static "js/script.js" %}"></script>
+    </body>
 </html>

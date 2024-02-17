@@ -17,13 +17,22 @@ body {
 #header {
   width: 100%;
   height: 100vh;
-  background-image: url(images/pp.png);
+  background-image: url("../images/pp.png");
   background-size: cover;
   background-position: center;
 }
 
 .container {
   padding: 10px 10%;
+}
+
+.message{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
@@ -449,7 +458,7 @@ nav .fas {
     overflow: hidden;
   } */
   #header {
-    background-image: url(images/pp2.png);
+    background-image: url(../images/pp2.png);
   }
 
   .header-text {

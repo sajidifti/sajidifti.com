@@ -1,123 +1,78 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Sajid Anam Ifti</title>
-
-    <!-- link -->
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/abffacff72.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div id="header" style="background-image: none;">
-        <div class="container">
-            <nav>
-                <a href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
-                <ul id="sidemenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#Projects">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <i class="fas fa-solid fa-xmark menu-icon" onclick="closemenu()"></i>
-                </ul>
-                <i class="fas fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
-            </nav>
-            <div class="work-list" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="work">
-                    <img src="images/sign.png">
-                    <div class="layer">
-                        <h3>Word Level Deep Sign Language Translator</h3>
-                        <h4>Django, Pytorch, HTML, CSS, OpenCV</h4>
-                        <p>A capstone project that uses I3D-trained models to recognize American Sign Language
-                            efficiently and translate to English
-                            words. The project consists of a web application and an Android WebView app.</p>
-                        <a href="https://github.com/sajidifti/Word_Level_Sign_Language_Translator_Django_OpenCV_Local"
-                            target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/shorty.png">
-                    <div class="layer">
-                        <h3>Shorty - URL Shortener</h3>
-                        <h4>Django, HTML, CSS</h4>
-                        <p>A URL shortener built with Django for personal use. It was developed to take advantage of my
-                            domain and server. I incorporated custom user model, reCAPTCHA, and email verification.</p>
-                        <a href="https://github.com/sajidifti/Shorty-URL_Shortener" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/silicon.png">
-                    <div class="layer">
-                        <h3>Siliconbyte - Bangla Tech News Site</h3>
-                        <h4>PHP, Bootstrap, HTML, CSS</h4>
-                        <p>A Bangla tech news website created with vanilla PHP and MySQL as database. It incorporates an
-                            interaction-based content
-                            recommendation system. Users get content recommended based on article reading history.</p>
-                        <a href="https://github.com/sajidifti/Siliconbyte_Bangla_Tech_News_Site_PHP" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/havenly.png">
-                    <div class="layer">
-                        <h3>Havenly - Interior Designer Hiring Platform</h3>
-                        <h4>Django, Bootstrap, HTML, CSS</h4>
-                        <p>A platform where users can find registered interior designers. Designers can post their
-                            designs. Users can message
-                            designers. Designers can reply and discuss. Tawk.to chat API is used to provide live
-                            chat-based customer support.</p>
-                        <a href="https://github.com/sajidifti/Havenly_Django" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/rent.png">
-                    <div class="layer">
-                        <h3>Rentmatch - To-Let Platform</h3>
-                        <h4>Java, XML, Firebase, Mapbox</h4>
-                        <p>An Android app to post and find To-Lets. It uses Mapbox SDK to display apartment locations
-                            and directions.</p>
-                        <a href="https://github.com/sajidifti/RentMatch_To-Let_Platform" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square" target="_blank"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/calc.png">
-                    <div class="layer">
-                        <h3>Calculator for Android</h3>
-                        <h4>Java, XML, Rhino</h4>
-                        <p>A simple calculator app for Android. It uses Rhino. It has a user-friendly interface. It can
-                            store upto 10 calculation history.</p>
-                        <a href="https://github.com/sajidifti/Android_Calculator" target="_blank"><i
-                                class="fa-solid fa-up-right-from-square" target="_blank"></i></a>
-                    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects - Sajid Anam Ifti</title>
+        <!-- link -->
+        <link rel="shortcut icon"
+              href="{% static "favicon.ico" %}"
+              type="image/x-icon">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <script src="https://kit.fontawesome.com/abffacff72.js"
+                crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header" style=" background-image: none;">
+            <div class="container">
+                <nav>
+                    <a href="{% url "landing" %}">
+                        <img src="{% static "images/mainlogo.png" %}" class="logo" alt="logo">
+                    </a>
+                    <ul id="sidemenu">
+                        <li>
+                            <a href="{% url "landing" %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#about">About</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#services">Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#Projects">Projects</a>
+                        </li>
+                        <li>
+                            <a href="{% url "landing" %}#contact">Contact</a>
+                        </li>
+                        <i class="fas fa-solid fa-xmark menu-icon" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fas fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
+                </nav>
+                <h1 class="sub-title" style="margin-top: 30px; text-align: center;">All Projects</h1>
+                <div class="work-list"
+                     style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))">
+                    {% if projects %}
+                        {% for project in projects %}
+                            <div class="work">
+                                <img src="{{ project.image.url }}">
+                                <div class="layer" style="font-size: 12px;">
+                                    <h3>{{ project.project_name }}</h3>
+                                    <h4>{{ project.tech_stack }}</h4>
+                                    <p>{{ project.description }}</p>
+                                    <a href="{{ project.github }}" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <h3>No projects Found!</h3>
+                    {% endif %}
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <div class="links">
-                <a href="https://jellyfin.sajidifti.com" target="_blank">Jellyfin</a>
-                <a href="https://code.sajidifti.com" target="_blank">VS Code Server</a>
-                <a href="https://shorty.sajidifti.com" target="_blank">Shorty</a>
-                <a href="https://cloud.sajidifti.com" target="_blank">NextCloud</a>
-                <a href="https://Siliconbyte.sajidifti.com" target="_blank">SiliconByte</a>
+            <div class="copyright">
+                <div class="links">
+                    <a href="https://jellyfin.sajidifti.com" target="_blank">Jellyfin</a>
+                    <a href="https://code.sajidifti.com" target="_blank">VSCode</a>
+                    <a href="https://shorty.sajidifti.com" target="_blank">Shorty</a>
+                    <a href="https://cloud.sajidifti.com" target="_blank">NextCloud</a>
+                    <a href="https://Siliconbyte.sajidifti.com" target="_blank">SiliconByte</a>
+                </div>
+                <p>Copyright © Sajid Anam Ifti. All rights reserved</p>
             </div>
-            <p>Copyright © Sajid Anam Ifti. All rights reserved</p>
         </div>
-    </div>
-
-    <!-- Scroll to The Top -->
-    <div class="scroll-to-top" id="scrollButton" onclick="scrollToTop()">
-        ↑
-    </div>
-    
-    <script src="script.js"></script>
-
-</body>
-
+        <!-- Scroll to The Top -->
+        <div class="scroll-to-top" id="scrollButton" onclick="scrollToTop()">↑</div>
+        <script src="{% static "js/script.js" %}"></script>
+    </body>
 </html>
