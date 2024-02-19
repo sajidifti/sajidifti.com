@@ -4,3 +4,4 @@ db.sqlite3
 *.pyc
 credentials.py
 media/profiles/*
+static/admin/*
