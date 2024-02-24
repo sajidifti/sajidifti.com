@@ -10,6 +10,7 @@ import mimetypes
 from django.contrib import messages
 from .models import Project
 from .forms import ContactForm
+from users.views import notificationEmail
 
 
 # Create your views here.
@@ -21,6 +22,9 @@ def landing(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            message_from_user = f"Name: {form.cleaned_data['name']}\nEmail: {form.cleaned_data['email']}\nMessage: {form.cleaned_data['message']}"
+            notificationEmail(request, "New Message - SajidIfti.Com",
+                              message_from_user, "info@sajidifti.com")
             messages.success(request, "Message Sent!")
             return redirect("landing")
         else:
