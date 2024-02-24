@@ -51,3 +51,23 @@ def admin_only(view_func):
                 return view_func(request, *args, **kwargs)
 
     return wrapper_function
+
+
+def users_only(view_func):
+    """
+    Allows General Users Only
+    """
+
+    def wrapper_function(request, *args, **kwargs):
+        group = None
+
+        if request.user.groups.exists():
+            group = request.user.groups.all()[0].name
+
+            if group == "admin":
+                return redirect("home")
+
+            if group == "generaluser":
+                return view_func(request, *args, **kwargs)
+
+    return wrapper_function

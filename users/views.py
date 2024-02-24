@@ -20,11 +20,17 @@ from .forms import (
     SetPasswordForm,
     PasswordResetForm,
 )
-from .decorators import unauthenticated_users_only, authenticated_users_only, admin_only
+from .decorators import (
+    unauthenticated_users_only,
+    authenticated_users_only,
+    admin_only,
+    users_only,
+)
 from .tokens import account_activation_token
 
 
 # Create your views here.
+
 
 @unauthenticated_users_only
 def activate(request, uidb64, token):
@@ -65,7 +71,8 @@ def verifyReset(request, uidb64, token):
             if form.is_valid():
                 form.save()
                 messages.success(
-                    request, f"Password reset successful. You can now login.")
+                    request, f"Password reset successful. You can now login."
+                )
                 return redirect("login")
             else:
                 for field, error_messages in form.errors.items():
@@ -81,7 +88,6 @@ def verifyReset(request, uidb64, token):
     return redirect("login")
 
 
-@unauthenticated_users_only
 def tokenEmail(request, user, to_email, subject, template, puspose):
     message = render_to_string(
         template,
@@ -155,7 +161,12 @@ def customSignup(request):
                 f"Account created successfully for {user.username}.\nWe sent a welcome email to {user.email}.\nYour request to sign up is under review.\nYou will be notified once your account is approved.\nThank you!",
             )
 
-            notificationEmail(request, "Welcome to Shorty!", "Welcome to Short. Your account was created succesfully. Your account is being reviewed. Once approved, you will get a verification email.", user.email)
+            notificationEmail(
+                request,
+                "Welcome to Shorty!",
+                "Welcome to Short. Your account was created succesfully. Your account is being reviewed. Once approved, you will get a verification email.",
+                user.email,
+            )
 
             return redirect("login")
         else:
@@ -313,8 +324,7 @@ def profile(request):
     user = get_user_model().objects.filter(username=username).first()
 
     if request.method == "POST":
-        form = UserUpdateForm(request.POST, request.FILES,
-                              instance=request.user)
+        form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
 
         if form.is_valid():
             form.save()
@@ -402,3 +412,19 @@ def allusers(request):
 
     active_users = get_user_model().objects.filter(is_active=True)
     return render(request, "users/users.html", {"active_users": active_users})
+
+
+@login_required
+@users_only
+def delete_account(request):
+    if request.user.groups.filter(name="generaluser").exists():
+        if request.method == "POST":
+            user = request.user
+            user.delete()
+            messages.success(request, "Your account has been deleted successfully.")
+            return redirect("home")
+        else:
+            return render(request, "users/delete_account.html")
+    else:
+        messages.error(request, "You are not authorized to delete your account.")
+        return redirect("home")
