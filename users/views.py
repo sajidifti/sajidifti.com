@@ -123,9 +123,14 @@ def tokenEmail(request, user, to_email, subject, template, puspose):
         messages.error(request, f"Email sending failed for {user.email}.")
 
 
-def notificationEmail(request, subject, message, to_email):
-    sender_name = "Shorty"
-    sender_email = "services@sajidifti.com"
+def notificationEmail(
+    request,
+    subject,
+    message,
+    to_email,
+    sender_name="Shorty",
+    sender_email="services@sajidifti.com",
+):
 
     email = EmailMessage(
         subject, message, from_email=f"{sender_name} <{sender_email}>", to=[to_email]
