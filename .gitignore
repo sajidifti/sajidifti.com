@@ -5,6 +5,7 @@ db.sqlite3
 credentials.py
 media/profiles/*
 static/admin/*
+static/fontawesomefree/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
