@@ -254,6 +254,9 @@
                             <input type="text" name="name" placeholder="Your Name" required>
                             <input type="email" name="email" placeholder="Your Email" required>
                             <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                            <div class="captcha-container">
+                                {{ form.captcha }}
+                            </div>
                             <button type="submit" class="btn btn2">Submit</button>
                         </form>
                         <span id="msg"></span>
@@ -274,5 +277,6 @@
         <!-- Scroll to The Top -->
         <div class="scroll-to-top" id="scrollButton" onclick="scrollToTop()">↑</div>
         <script src="{% static "js/script.js" %}"></script>
+        
     </body>
 </html>

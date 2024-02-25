@@ -30,8 +30,16 @@ def landing(request):
         else:
             for field, error_messages in form.errors.items():
                 for error_message in error_messages:
-                    allerrors = allerrors + " " + error_message
+                    if (
+                        field == "captcha"
+                        and error_message == "This field is required."
+                    ):
+                        custom_error_message = "You must pass the reCAPTCHA test. "
+                        allerrors = allerrors + " " + custom_error_message
+                    else:
+                        allerrors = allerrors + " " + error_message
             messages.error(request, allerrors)
+            return redirect("landing")
     else:
         form = ContactForm()
 
