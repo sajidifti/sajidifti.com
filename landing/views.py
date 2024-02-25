@@ -23,7 +23,7 @@ def landing(request):
         if form.is_valid():
             form.save()
             message_from_user = f"Name: {form.cleaned_data['name']}\nEmail: {form.cleaned_data['email']}\nMessage: {form.cleaned_data['message']}"
-            notificationEmail(request, "New Message - SajidIfti.Com",
+            notificationEmail(request, f"{form.cleaned_data['name']} - SajidIfti.Com",
                               message_from_user, "info@sajidifti.com", sender_name = "Portfolio")
             messages.success(request, f"Thank You for Contacting Me.\nI'll Get Back to You As Soon As Possible.")
             return redirect("landing")
