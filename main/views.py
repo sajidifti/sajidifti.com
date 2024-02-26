@@ -44,7 +44,9 @@ def redirect_to_original(request, custom_url):
         url_shortener = URLShortener.objects.get(custom_url=custom_url)
         return redirect(url_shortener.original_url)
     except URLShortener.DoesNotExist:
-        raise Http404("Shortened URL does not exist.")
+        # raise Http404("Shortened URL does not exist.")
+        messages.error(request, "The URL Does Not Exist!")
+        return redirect("landing")
 
 
 @login_required
