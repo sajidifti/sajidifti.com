@@ -420,7 +420,7 @@ def allusers(request):
 
 
 @login_required
-@users_only
+# @users_only
 def delete_account(request):
     if request.user.groups.filter(name="generaluser").exists():
         if request.method == "POST":
