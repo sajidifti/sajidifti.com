@@ -5,7 +5,7 @@ from django.conf import settings
 class URLShortener(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
-    original_url = models.URLField(unique=False)
+    original_url = models.URLField(max_length=2000, unique=False)
     custom_url = models.CharField(
         max_length=100, unique=True, blank=True, null=True)
 
